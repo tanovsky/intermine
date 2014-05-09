@@ -1,0 +1,2 @@
+11	dbSNP	SNP	70643	70643	.	+	.	ID=16;Variant_seq=G;Dbxref=dbSNP_138:rs377362560;Reference_seq=A
+11	dbSNP	SNP	70932	70932	.	+	.	ID=28;Variant_seq=G;Variant_effect=upstream_gene_variant 0 transcript ENST00000519787;Dbxref=dbSNP_138:rs375963971;Reference_seq=C

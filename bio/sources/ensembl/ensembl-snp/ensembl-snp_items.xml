@@ -1,0 +1,70 @@
+<items>
+<item id="1_1" class="DataSource">
+<attribute name="name" value="Ensembl"/>
+</item>
+<item id="4_1" class="Chromosome">
+<attribute name="primaryIdentifier" value="11"/>
+<reference name="organism" ref_id="0_1"/>
+<reference name="sequenceOntologyTerm" ref_id="5_1"/>
+<collection name="dataSets"><reference ref_id="2_1"/></collection>
+</item>
+<item id="0_1" class="Organism">
+<attribute name="taxonId" value="9606"/>
+</item>
+<item id="2_1" class="DataSet">
+<attribute name="name" value="dbSNP data set"/>
+<reference name="dataSource" ref_id="1_1"/>
+</item>
+<item id="3_1" class="Ontology">
+<attribute name="name" value="Sequence Ontology"/>
+<attribute name="url" value="http://www.sequenceontology.org"/>
+</item>
+<item id="6_2" class="SNP">
+<attribute name="length" value="1"/>
+<attribute name="primaryIdentifier" value="28"/>
+<attribute name="referenceSequence" value="C"/>
+<attribute name="variantSequence" value="G"/>
+<reference name="chromosome" ref_id="4_1"/>
+<reference name="chromosomeLocation" ref_id="7_2"/>
+<reference name="organism" ref_id="0_1"/>
+<reference name="sequenceOntologyTerm" ref_id="5_2"/>
+<collection name="dataSets"><reference ref_id="2_1"/></collection>
+</item>
+<item id="7_2" class="Location">
+<attribute name="end" value="70932"/>
+<attribute name="start" value="70932"/>
+<attribute name="strand" value="1"/>
+<reference name="feature" ref_id="6_2"/>
+<reference name="locatedOn" ref_id="4_1"/>
+<collection name="dataSets"><reference ref_id="2_1"/></collection>
+</item>
+<item id="6_1" class="SNP">
+<attribute name="length" value="1"/>
+<attribute name="primaryIdentifier" value="16"/>
+<attribute name="referenceSequence" value="A"/>
+<attribute name="variantSequence" value="G"/>
+<reference name="chromosome" ref_id="4_1"/>
+<reference name="chromosomeLocation" ref_id="7_1"/>
+<reference name="organism" ref_id="0_1"/>
+<reference name="sequenceOntologyTerm" ref_id="5_2"/>
+<collection name="dataSets"><reference ref_id="2_1"/></collection>
+</item>
+<item id="7_1" class="Location">
+<attribute name="end" value="70643"/>
+<attribute name="start" value="70643"/>
+<attribute name="strand" value="1"/>
+<reference name="feature" ref_id="6_1"/>
+<reference name="locatedOn" ref_id="4_1"/>
+<collection name="dataSets"><reference ref_id="2_1"/></collection>
+</item>
+<item id="5_2" class="SOTerm">
+<attribute name="name" value="SNP"/>
+<reference name="ontology" ref_id="3_1"/>
+<collection name="dataSets"><reference ref_id="2_1"/></collection>
+</item>
+<item id="5_1" class="SOTerm">
+<attribute name="name" value="chromosome"/>
+<reference name="ontology" ref_id="3_1"/>
+<collection name="dataSets"><reference ref_id="2_1"/></collection>
+</item>
+</items>
