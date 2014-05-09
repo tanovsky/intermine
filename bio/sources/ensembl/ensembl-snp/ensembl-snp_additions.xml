@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <classes>
-   <class name="SNP" extends="SequenceFeature" is-interface="true">
+   <class name="SNV" extends="SequenceFeature" is-interface="true">
      <attribute name="variantSequence" type="java.lang.String"/>
      <attribute name="referenceSequence" type="java.lang.String"/>
      <attribute name="type" type="java.lang.String"/>

@@ -58,7 +58,7 @@ public class EnsemblSnpGFF3RecordHandlerTest extends ItemsTestCase
         converter.storeAll();
 
         // uncomment to write a new items xml file
-        writeItemsFile(writer.getItems(), "ensembl-snp_items.xml");
+        //writeItemsFile(writer.getItems(), "ensembl-snp_items.xml");
 
         Set<?> expected = readItemSet("EnsemblSnpGFF3RecordHandlerTest.xml");
         assertEquals(expected, writer.getItems());

@@ -51,6 +51,23 @@ public class EnsemblSnpGFF3RecordHandler extends GFF3RecordHandler
              if (referenceSeqs != null && referenceSeqs.size() > 0) {
                  snp.setAttribute("referenceSequence", referenceSeqs.get(0));
              }
+
+             List<String> variantEffects = record.getAttributes().get("Variant_effect");
+             if (variantEffects == null || variantEffects.isEmpty()) {
+                 return;
+             }
+             for (String effect : variantEffects) {
+                 // Variant_effect=upstream_gene_variant 0 transcript ENST00000519787
+                 String transcriptIdentifier = getTranscriptIdentifier(effect);
+                 Item transcript = converter.createItem("Transcript");
+                 transcript.setAttribute("primaryIdentifier", transcriptIdentifier);
+                 addItem(transcript);
+
+                 Item consequence = converter.createItem("Consequence");
+                 consequence.setAttribute("description", effect);
+                 consequence.setReference("transcript", transcript);
+                 addItem(consequence);
+             }
     }
 
     private String getIdentifier(List<String> xrefs) {
@@ -64,6 +81,19 @@ public class EnsemblSnpGFF3RecordHandler extends GFF3RecordHandler
                 if (identifier != null && identifier.startsWith("rs")) {
                     return identifier;
                 }
+            }
+        }
+        return null;
+    }
+
+    private String getTranscriptIdentifier(String description) {
+        if (description == null) {
+            return null;
+        }
+        String bits[] = description.split(" ");
+        for (String word : bits) {
+            if (word != null && word.startsWith("ENST")) {
+                return word;
             }
         }
         return null;

@@ -1,51 +1,84 @@
 <items>
 <item id="1_1" class="DataSource">
-<attribute name="name" value="Micklem lab"/>
+<attribute name="name" value="Ensembl"/>
 </item>
-<item id="5_1" class="SOTerm">
-<attribute name="name" value="mRNA"/>
-<reference name="ontology" ref_id="3_1"/>
-<collection name="dataSets"><reference ref_id="2_1"/></collection>
+<item id="9_1" class="Consequence">
+<attribute name="description" value="upstream_gene_variant 0 transcript ENST00000519787"/>
+<reference name="transcript" ref_id="8_1"/>
 </item>
-<item id="8_1" class="Synonym">
-<attribute name="value" value="12-CG4314-RA_1"/>
-<reference name="subject" ref_id="6_1"/>
-<collection name="dataSets"><reference ref_id="2_1"/></collection>
-</item>
-<item id="4_1" class="MRNA">
-<attribute name="primaryIdentifier" value="FBtr0075391"/>
+<item id="4_1" class="Chromosome">
+<attribute name="primaryIdentifier" value="11"/>
 <reference name="organism" ref_id="0_1"/>
 <reference name="sequenceOntologyTerm" ref_id="5_1"/>
 <collection name="dataSets"><reference ref_id="2_1"/></collection>
+</item>
+<item id="2_1" class="DataSet">
+<attribute name="name" value="dbSNP data set"/>
+<reference name="dataSource" ref_id="1_1"/>
 </item>
 <item id="3_1" class="Ontology">
 <attribute name="name" value="Sequence Ontology"/>
 <attribute name="url" value="http://www.sequenceontology.org"/>
 </item>
-<item id="6_1" class="MicroarrayOligo">
-<attribute name="length" value="14"/>
-<attribute name="primaryIdentifier" value="1000044388"/>
-<attribute name="tm" value="92.25"/>
-<reference name="organism" ref_id="0_1"/>
-<reference name="sequence" ref_id="7_1"/>
-<reference name="sequenceOntologyTerm" ref_id="5_2"/>
-<reference name="transcript" ref_id="4_1"/>
-<collection name="dataSets"><reference ref_id="2_1"/></collection>
-</item>
-<item id="5_2" class="SOTerm">
-<attribute name="name" value="microarray_oligo"/>
+<item id="5_3" class="SOTerm">
+<attribute name="name" value="transcript"/>
 <reference name="ontology" ref_id="3_1"/>
 <collection name="dataSets"><reference ref_id="2_1"/></collection>
 </item>
-<item id="7_1" class="Sequence">
-<attribute name="length" value="14"/>
-<attribute name="residues" value="ACACGGGTCAGGAT"/>
-</item>
-<item id="2_1" class="DataSet">
-<attribute name="name" value="INDAC long oligo data set"/>
-<reference name="dataSource" ref_id="1_1"/>
+<item id="5_2" class="SOTerm">
+<attribute name="name" value="SNV"/>
+<reference name="ontology" ref_id="3_1"/>
+<collection name="dataSets"><reference ref_id="2_1"/></collection>
 </item>
 <item id="0_1" class="Organism">
-<attribute name="taxonId" value="7227"/>
+<attribute name="taxonId" value="9606"/>
+</item>
+<item id="6_1" class="SNV">
+<attribute name="length" value="1"/>
+<attribute name="primaryIdentifier" value="16"/>
+<attribute name="referenceSequence" value="A"/>
+<attribute name="variantSequence" value="G"/>
+<reference name="chromosome" ref_id="4_1"/>
+<reference name="chromosomeLocation" ref_id="7_1"/>
+<reference name="organism" ref_id="0_1"/>
+<reference name="sequenceOntologyTerm" ref_id="5_2"/>
+<collection name="dataSets"><reference ref_id="2_1"/></collection>
+</item>
+<item id="7_2" class="Location">
+<attribute name="end" value="70932"/>
+<attribute name="start" value="70932"/>
+<attribute name="strand" value="1"/>
+<reference name="feature" ref_id="6_2"/>
+<reference name="locatedOn" ref_id="4_1"/>
+<collection name="dataSets"><reference ref_id="2_1"/></collection>
+</item>
+<item id="7_1" class="Location">
+<attribute name="end" value="70643"/>
+<attribute name="start" value="70643"/>
+<attribute name="strand" value="1"/>
+<reference name="feature" ref_id="6_1"/>
+<reference name="locatedOn" ref_id="4_1"/>
+<collection name="dataSets"><reference ref_id="2_1"/></collection>
+</item>
+<item id="6_2" class="SNV">
+<attribute name="length" value="1"/>
+<attribute name="primaryIdentifier" value="28"/>
+<attribute name="referenceSequence" value="C"/>
+<attribute name="variantSequence" value="G"/>
+<reference name="chromosome" ref_id="4_1"/>
+<reference name="chromosomeLocation" ref_id="7_2"/>
+<reference name="organism" ref_id="0_1"/>
+<reference name="sequenceOntologyTerm" ref_id="5_2"/>
+<collection name="dataSets"><reference ref_id="2_1"/></collection>
+</item>
+<item id="8_1" class="Transcript">
+<attribute name="primaryIdentifier" value="ENST00000519787"/>
+<reference name="sequenceOntologyTerm" ref_id="5_3"/>
+<collection name="dataSets"><reference ref_id="2_1"/></collection>
+</item>
+<item id="5_1" class="SOTerm">
+<attribute name="name" value="chromosome"/>
+<reference name="ontology" ref_id="3_1"/>
+<collection name="dataSets"><reference ref_id="2_1"/></collection>
 </item>
 </items>
