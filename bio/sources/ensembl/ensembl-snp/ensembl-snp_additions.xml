@@ -8,6 +8,10 @@
      <collection name="validations" referenced-type="ValidationState" />
      <collection name="consequences" referenced-type="Consequence"/>
    </class>
+   <class name="Deletion" extends="SequenceAlteration" is-interface="true"/>
+   <class name="Insertion" extends="SequenceAlteration" is-interface="true"/>
+   <class name="SNV" extends="SequenceAlteration" is-interface="true"/>
+   <class name="Substitution" extends="SequenceAlteration" is-interface="true"/>
    <class name="ValidationState" is-interface="true">
      <attribute name="name" type="java.lang.String"/>
    </class>
