@@ -12,6 +12,7 @@ package org.intermine.bio.dataconversion;
 
 import java.util.List;
 
+import org.apache.commons.lang.StringUtils;
 import org.intermine.bio.io.gff3.GFF3Record;
 import org.intermine.metadata.Model;
 import org.intermine.xml.full.Item;
@@ -59,13 +60,17 @@ public class EnsemblSnpGFF3RecordHandler extends GFF3RecordHandler
              for (String effect : variantEffects) {
                  // Variant_effect=upstream_gene_variant 0 transcript ENST00000519787
                  String transcriptIdentifier = getTranscriptIdentifier(effect);
-                 Item transcript = converter.createItem("Transcript");
-                 transcript.setAttribute("primaryIdentifier", transcriptIdentifier);
-                 addItem(transcript);
 
                  Item consequence = converter.createItem("Consequence");
                  consequence.setAttribute("description", effect);
-                 consequence.setReference("transcript", transcript);
+                 if (StringUtils.isNotEmpty(transcriptIdentifier)) {
+
+                     Item transcript = converter.createItem("Transcript");
+                     transcript.setAttribute("primaryIdentifier", transcriptIdentifier);
+                     addItem(transcript);
+
+                     consequence.setReference("transcript", transcript);
+                 }
                  addItem(consequence);
              }
     }
